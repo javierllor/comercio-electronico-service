@@ -1,0 +1,9 @@
+ApiError:
+  type: object
+  required:
+    - errorCode
+  properties:
+    errorCode:
+      type: string
+    message:
+      type: string

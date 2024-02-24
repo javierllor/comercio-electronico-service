@@ -1,0 +1,25 @@
+Price:
+  type: object
+  required:
+    - productId
+    - brandId
+    - priceList
+    - startDate
+    - endDate
+    - finalPrice
+  properties:
+    productId:
+      type: integer
+      format: int64
+    brandId:
+      type: integer
+    priceList:
+      type: integer
+    startDate:
+      type: string
+      format: date-time
+    endDate:
+      type: string
+      format: date-time
+    finalPrice:
+      type: string
