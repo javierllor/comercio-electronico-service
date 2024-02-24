@@ -5,25 +5,64 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d825301-6c3a-45c1-9a0b-a2892ea83387" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gft/commercial/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/gft/commercial/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lombok.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gft/commercial/CommercialApiApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gft/commercial/config/OpenApiConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gft/commercial/controller/PriceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gft/commercial/entity/PriceEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gft/commercial/entity/PriceEntityId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gft/commercial/exception/ResourceNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gft/commercial/exception/RestExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gft/commercial/exception/ValidationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gft/commercial/mapper/PriceMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gft/commercial/repository/PricesRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gft/commercial/service/PriceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gft/commercial/service/impl/PriceServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/api-components/Error.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/api-components/Price.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/api-paths/v1/prices-api-v1.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/data.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/openapi.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/gft/commercial/controller/PriceControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/gft/commercial/e2e/PriceE2ETest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/gft/commercial/service/PriceServiceITest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/gft/commercial/service/PriceServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/application.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/data/delete_prices.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/data/insert_prices.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/data/prices_schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gft/commercial/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/gft/commercial/AppTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2cfyjzNk0rnKHsvJzs5E7Eovk5B" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -32,22 +71,67 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Workspace/filters-service",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.gft.commercial.App" />
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\WorkspacePractica\commercial-service" />
+      <recent name="C:\WorkspacePractica\commercial-service\src\main\resources" />
+      <recent name="C:\WorkspacePractica\commercial-service\src\test\resources\data" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\WorkspacePractica\commercial-service\src\main\resources\api-paths\v1" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.gft.commercial.controller" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.gft.commercial.exception" />
+      <recent name="com.gft.commercial.config" />
+      <recent name="com.gft.commercial.mapper" />
+      <recent name="com.gft.commercial.dto" />
+      <recent name="com.gft.commercial.repository" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.All in commercial-service (1)">
+    <configuration name="All in commercial-service (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="commercial-service" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in commercial-service" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="commercial-service" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommercialApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="commercial-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gft.commercial.CommercialApiApplication" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.gft.commercial.*" />
@@ -60,7 +144,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.App" />
+        <item itemvalue="JUnit.All in commercial-service (1)" />
+        <item itemvalue="Spring Boot.CommercialApiApplication" />
+        <item itemvalue="JUnit.All in commercial-service" />
       </list>
     </recent_temporary>
   </component>
@@ -72,11 +158,71 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708517069036</updated>
-      <workItem from="1708517070011" duration="712000" />
+      <workItem from="1708517070011" duration="18039000" />
+      <workItem from="1708589904204" duration="33286000" />
+      <workItem from="1708677324688" duration="12204000" />
+      <workItem from="1708694531629" duration="725000" />
+      <workItem from="1708695480284" duration="7334000" />
+      <workItem from="1708707561911" duration="11909000" />
+      <workItem from="1708764537504" duration="1368000" />
+      <workItem from="1708765964424" duration="12915000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="22ad54ee-ed98-4a85-9055-a460a37dc5a6" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="22ad54ee-ed98-4a85-9055-a460a37dc5a6">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/gft/commercial/service/impl/PriceServiceImpl.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/commercial_service$All_in_commercial_service__3_.ic" NAME="All in commercial-service (3) Coverage Results" MODIFIED="1708719048552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/commercial_service$All_in_commercial_service__2_.ic" NAME="All in commercial-service (2) Coverage Results" MODIFIED="1708766214641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/commercial_service$All_in_commercial_service__1_.ic" NAME="All in commercial-service (1) Coverage Results" MODIFIED="1708779062372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/commercial_service$All_in_commercial_service.ic" NAME="All in commercial-service Coverage Results" MODIFIED="1708779766150" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

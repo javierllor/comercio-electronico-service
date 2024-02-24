@@ -1,0 +1,53 @@
+prices:
+  get:
+    tags:
+      - Prices
+    summary: Get Price By Brand Id and Product Id and Date
+    description: Return the price for specific rand Id and Product Id and Date
+    operationId: getPrice
+    parameters:
+      - name: brandId
+        in: path
+        description: Brand Id
+        required: true
+        schema:
+          type: integer
+      - name: productId
+        in: path
+        description: Product Id
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: date
+        in: path
+        description: Date
+        required: true
+        schema:
+          type: string
+          format: date-time
+    responses:
+      "200":
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../../api-components/Price.yaml#/Price"
+      "400":
+        description: Bad request.
+        content:
+          application/json:
+            schema:
+              $ref: "../../api-components/Error.yaml#/ApiError"
+      "404":
+        description: Not found.
+        content:
+          application/json:
+            schema:
+              $ref: "../../api-components/Error.yaml#/ApiError"
+      "500":
+        description: Unexpected error.
+        content:
+          application/json:
+            schema:
+              $ref: "../../api-components/Error.yaml#/ApiError"
