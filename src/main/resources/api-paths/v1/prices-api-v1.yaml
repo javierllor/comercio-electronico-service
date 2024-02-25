@@ -11,21 +11,21 @@ prices:
         description: Brand Id
         required: true
         schema:
-          type: integer
+          type: string
       - name: productId
         in: path
         description: Product Id
         required: true
         schema:
-          type: integer
-          format: int64
+          type: string
       - name: date
         in: path
         description: Date
         required: true
         schema:
           type: string
-          format: date-time
+          pattern: '^\d{4}-\d{2}-\d{2}-\d{2}\.\d{2}\.\d{2}$'
+          description: Custom DateTime format "yyyy-MM-dd-HH.mm.ss"
     responses:
       "200":
         description: OK

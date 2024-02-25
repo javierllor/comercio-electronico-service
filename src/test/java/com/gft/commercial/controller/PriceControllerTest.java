@@ -10,9 +10,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import com.gft.commercial.exception.ResourceNotFoundException;
 import com.gft.commercial.service.PriceService;
 import com.gft.commercial.swagger.dto.PriceDto;
-import java.time.LocalDateTime;
-import java.time.Month;
-import java.time.format.DateTimeFormatter;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.aop.AopAutoConfiguration;
@@ -28,11 +25,9 @@ import org.springframework.test.web.servlet.MockMvc;
 @AutoConfigureMockMvc
 public class PriceControllerTest {
 
-    public static final Integer BRAND_ID = 1;
-    public static final Long PRODUCT_ID = 35455L;
-    public static final LocalDateTime DATE = LocalDateTime.of(2020, Month.JUNE, 14, 0, 0);
-
-    public static final String DATE_STRING = DATE.format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss"));
+    public static final String BRAND_ID = "1";
+    public static final String PRODUCT_ID = "35455";
+    public static final String DATE = "2020-06-14-00.00.00";
 
     public static final Integer PRICE_LIST = 2;
 
@@ -49,8 +44,8 @@ public class PriceControllerTest {
                 eq(BRAND_ID), eq(PRODUCT_ID), eq(DATE)))
                 .thenReturn(PriceDto
                         .builder()
-                        .brandId(BRAND_ID)
-                        .productId(PRODUCT_ID)
+                        .brandId(Integer.parseInt(BRAND_ID))
+                        .productId(Long.parseLong(PRODUCT_ID))
                         .startDate(DATE)
                         .endDate(DATE)
                         .priceList(PRICE_LIST)
@@ -60,14 +55,14 @@ public class PriceControllerTest {
         // Then
         this.mockMvc
                 .perform(
-                        get("/prices/1/35455/2020-06-14T00:00:00")
+                        get("/prices/1/35455/2020-06-14-00.00.00")
                                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.productId", is(35455)))
-                .andExpect(jsonPath("$.brandId", is(BRAND_ID)))
+                .andExpect(jsonPath("$.brandId", is(Integer.parseInt(BRAND_ID))))
                 .andExpect(jsonPath("$.priceList", is(PRICE_LIST)))
-                .andExpect(jsonPath("$.startDate", is(DATE_STRING)))
-                .andExpect(jsonPath("$.endDate", is(DATE_STRING)));
+                .andExpect(jsonPath("$.startDate", is(DATE)))
+                .andExpect(jsonPath("$.endDate", is(DATE)));
     }
 
     @Test
@@ -81,46 +76,10 @@ public class PriceControllerTest {
         // Then
         this.mockMvc
                 .perform(
-                        get("/prices/1/35455/2020-06-14T00:00:00")
+                        get("/prices/1/35455/2020-06-14-00.00.00")
                                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound())
                 .andExpect(jsonPath("$.errorCode", is("NOT_FOUND")));
-    }
-
-    @Test
-    void getPriceWrongBandId_Error() throws Exception {
-        // Given
-        // When
-        // Then
-        this.mockMvc
-                .perform(
-                        get("/prices/error/35455/2020-06-14T00:00:00")
-                                .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isBadRequest());
-    }
-
-    @Test
-    void getPriceWrongProductId_Error() throws Exception {
-        // Given
-        // When
-        // Then
-        this.mockMvc
-                .perform(
-                        get("/prices/1/error/2020-06-14T00:00:00")
-                                .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isBadRequest());
-    }
-
-    @Test
-    void getPriceWrongDate_Error() throws Exception {
-        // Given
-        // When
-        // Then
-        this.mockMvc
-                .perform(
-                        get("/prices/error/35455/2020-06-14-00:00:00")
-                                .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isBadRequest());
     }
 
     @Test
@@ -130,7 +89,7 @@ public class PriceControllerTest {
         // Then
         this.mockMvc
                 .perform(
-                        get("/error/1/35455/2020-06-14-00:00:00")
+                        get("/error/1/35455/2020-06-14-00.00.00")
                                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound());
     }

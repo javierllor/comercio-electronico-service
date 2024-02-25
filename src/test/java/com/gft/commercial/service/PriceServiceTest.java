@@ -6,8 +6,6 @@ import static org.mockito.Mockito.when;
 import com.gft.commercial.exception.ResourceNotFoundException;
 import com.gft.commercial.repository.PricesRepository;
 import jakarta.persistence.PersistenceException;
-import java.time.LocalDateTime;
-import java.time.Month;
 import java.util.Optional;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -19,38 +17,20 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class PriceServiceTest {
 
 
-    public static final Integer BRAND_ID = 1;
-    public static final Long PRODUCT_ID = 35455L;
-    public static final LocalDateTime DATE = LocalDateTime.of(2020, Month.JUNE, 14, 0, 0);
+    public static final String BRAND_ID = "1";
+    public static final String PRODUCT_ID = "35455";
+    public static final String DATE = "2020-06-14-00.00.00";
     @Mock
     private PricesRepository pricesRepository;
 
     @Autowired
     private PriceService priceService;
 
-//    @Test
-//    void getPrice_Successful() {
-//        //Given
-//        when(pricesRepository.findFirstByBrandIdAndProductIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(
-//                eq(BRAND_ID), eq(PRODUCT_ID), eq(DATE), eq(DATE)))
-//                .thenReturn(Optional.of(PriceEntity.builder()
-//                        .brandId(BRAND_ID)
-//                        .productId(PRODUCT_ID)
-//                        .build()));
-//
-//        //When
-//        PriceDto price = priceService.getPrice(BRAND_ID, PRODUCT_ID, DATE);
-//
-//        //Then
-//        assertThat(price.getBrandId()).isEqualTo(BRAND_ID);
-//        assertThat(price.getProductId()).isEqualTo(PRODUCT_ID);
-//    }
-
     @Test
     void getPrice_NotFound() {
         //Given
-        when(pricesRepository.findFirstByBrandIdAndProductIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(
-                eq(BRAND_ID), eq(PRODUCT_ID), eq(DATE), eq(DATE)))
+        when(pricesRepository.findPriceEntity(
+                eq(Integer.parseInt(BRAND_ID)), eq(Long.parseLong(PRODUCT_ID)), eq(DATE), eq(DATE)))
                 .thenReturn(Optional.empty());
 
         //When
@@ -62,8 +42,8 @@ public class PriceServiceTest {
     @Test
     void getPrice_FatalError() {
         //Given
-        when(pricesRepository.findFirstByBrandIdAndProductIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(
-                eq(BRAND_ID), eq(PRODUCT_ID), eq(DATE), eq(DATE)))
+        when(pricesRepository.findPriceEntity(
+                eq(Integer.parseInt(BRAND_ID)), eq(Long.parseLong(PRODUCT_ID)), eq(DATE), eq(DATE)))
                 .thenThrow(PersistenceException.class);
 
         //When
