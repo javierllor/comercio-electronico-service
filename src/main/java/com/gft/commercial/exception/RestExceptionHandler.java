@@ -19,7 +19,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(ValidationException.class)
     @ResponseStatus(value = HttpStatus.BAD_REQUEST)
     public @ResponseBody ApiErrorDto handleValidationException(ValidationException exception) {
-        logger.warn("Validation error occurred: {}", exception.getMessage());
+        logger.error("Validation error occurred: {}", exception.getMessage());
         return ApiErrorDto.builder().errorCode(exception.getErrorCode()).message(exception.getMessage()).build();
     }
 

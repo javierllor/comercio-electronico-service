@@ -7,13 +7,13 @@ import jakarta.persistence.IdClass;
 import jakarta.persistence.Table;
 import java.io.Serial;
 import java.io.Serializable;
-import java.time.LocalDateTime;
 import java.util.Objects;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Getter
 @Setter
@@ -33,10 +33,12 @@ public class PriceEntity implements Serializable {
     private Integer brandId;
 
     @Column(name = "start_date")
-    private LocalDateTime startDate;
+    @DateTimeFormat(pattern = "yyyy-MM-dd-HH.mm.ss")
+    private String startDate;
 
     @Column(name = "end_date")
-    private LocalDateTime endDate;
+    @DateTimeFormat(pattern = "yyyy-MM-dd-HH.mm.ss")
+    private String endDate;
 
     @Id
     @Column(name = "price_list")
